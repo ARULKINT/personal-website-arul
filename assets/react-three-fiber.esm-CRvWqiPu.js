@@ -1,4 +1,4 @@
-import{r as je,g as rx,j as yi}from"./index-s7folDdM.js";/**
+import{r as je,g as rx,j as yi}from"./index-BAwNHGIN.js";/**
  * @license
  * Copyright 2010-2024 Three.js Authors
  * SPDX-License-Identifier: MIT
