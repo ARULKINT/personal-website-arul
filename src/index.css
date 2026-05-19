@@ -84,13 +84,7 @@ body::after {
   color: #fff;
 }
 
-/* Custom cursor: hide native when not on touch */
-@media (pointer: fine) {
-  html.cursor-hide,
-  html.cursor-hide * {
-    cursor: none !important;
-  }
-}
+/* Custom cursor overlay is decorative — native cursor always visible */
 
 /* Reusable layered glass */
 .glass {
