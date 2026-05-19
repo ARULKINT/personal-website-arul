@@ -49,8 +49,10 @@ export default function App() {
           a new containing block and breaks position:fixed children. */}
       {booted ? <FloatingNav /> : null}
 
+      {/* initial={false} → skip animation on mount; animate state is applied
+          immediately. This prevents the 0.8s blank flash on repeat visits. */}
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={false}
         animate={{ opacity: booted ? 1 : 0 }}
         transition={{ duration: 0.8 }}
       >

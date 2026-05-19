@@ -17,10 +17,12 @@ export default function FloatingNav() {
       {/* Desktop / left rail — fixed width so the glass panel never resizes.
           Each item's expanding pill is absolutely positioned, overlaying
           content to the right without shifting the nav box. */}
+      {/* max-h + overflow-hidden prevents nav from extending outside viewport
+          on short screens (e.g. landscape tablets / small browser windows) */}
       <nav
         aria-label="Primary"
-        style={{ width: 56 }}
-        className="hidden md:flex fixed left-4 top-1/2 z-50 -translate-y-1/2 flex-col gap-2 glass-strong holo-border rounded-2xl p-2"
+        style={{ width: 56, maxHeight: 'calc(100vh - 2rem)' }}
+        className="hidden md:flex fixed left-4 top-1/2 z-50 -translate-y-1/2 flex-col gap-1.5 overflow-hidden glass-strong holo-border rounded-2xl p-2"
       >
         {NAV_ITEMS.map(({ id, label, icon: Icon }) => {
           const isActive = active === id;

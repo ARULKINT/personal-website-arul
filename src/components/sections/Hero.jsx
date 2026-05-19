@@ -43,7 +43,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-20 md:px-10 lg:px-12">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 md:px-10 lg:px-12">
         <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <motion.div

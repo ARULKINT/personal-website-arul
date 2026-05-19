@@ -107,7 +107,9 @@ export default function HeroScene() {
       <FloatingShape position={[2.8, -1.6, -0.6]} color="#9dff00" geo="box" scale={0.65} />
       <FloatingShape position={[0, 2.3, -3]} color="#ffb800" geo="cone" scale={0.6} />
 
-      <CodeBillboard position={[-3.2, -0.2, 1.2]} />
+      {/* Moved deeper (z=-4) and higher so it renders as a small background
+          element and no longer overlaps the left-column hero text */}
+      <CodeBillboard position={[-3.8, 1.2, -4.0]} />
 
       <Rig />
     </Canvas>
