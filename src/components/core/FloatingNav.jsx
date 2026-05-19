@@ -14,10 +14,13 @@ export default function FloatingNav() {
 
   return (
     <>
-      {/* Desktop / left rail */}
+      {/* Desktop / left rail — fixed width so the glass panel never resizes.
+          Each item's expanding pill is absolutely positioned, overlaying
+          content to the right without shifting the nav box. */}
       <nav
         aria-label="Primary"
-        className="hidden md:flex fixed left-5 top-1/2 z-50 -translate-y-1/2 flex-col gap-2 glass-strong holo-border rounded-2xl p-2"
+        style={{ width: 56 }}
+        className="hidden md:flex fixed left-4 top-1/2 z-50 -translate-y-1/2 flex-col gap-2 glass-strong holo-border rounded-2xl p-2"
       >
         {NAV_ITEMS.map(({ id, label, icon: Icon }) => {
           const isActive = active === id;
@@ -28,19 +31,17 @@ export default function FloatingNav() {
               onClick={go(id)}
               initial={false}
               whileHover="hover"
-              className="group relative flex h-11 items-center overflow-hidden rounded-xl pl-2.5 pr-2.5"
+              className="group relative flex h-10 w-full items-center"
             >
               <motion.div
-                variants={{
-                  hover: { width: 168 },
-                }}
+                variants={{ hover: { width: 164 } }}
                 initial={{ width: 36 }}
-                animate={{ width: isActive ? 168 : 36 }}
+                animate={{ width: isActive ? 164 : 36 }}
                 transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-                className={`flex items-center gap-2 rounded-xl border px-1.5 py-1 ${
+                className={`absolute left-0 top-1/2 -translate-y-1/2 flex h-9 items-center gap-2 overflow-hidden rounded-xl border px-1.5 ${
                   isActive
-                    ? 'border-neon-cyan/70 bg-white/10 shadow-neon-cyan'
-                    : 'border-white/10 bg-white/[0.04] hover:border-neon-violet/60 hover:shadow-neon-violet'
+                    ? 'border-neon-cyan/70 bg-[#05060d] shadow-neon-cyan'
+                    : 'border-white/10 bg-[#05060d]/95 group-hover:border-neon-violet/60 group-hover:shadow-neon-violet'
                 }`}
               >
                 <span
@@ -50,11 +51,11 @@ export default function FloatingNav() {
                 >
                   <Icon size={16} />
                 </span>
-                <span className="overflow-hidden whitespace-nowrap font-display text-[11px] uppercase tracking-[0.18em] text-white/90">
+                <span className="whitespace-nowrap font-display text-[11px] uppercase tracking-[0.18em] text-white/90">
                   {label}
                 </span>
                 {isActive ? (
-                  <span className="ml-auto mr-1 h-1.5 w-1.5 rounded-full bg-neon-cyan animate-pulse" />
+                  <span className="ml-auto mr-1 h-1.5 w-1.5 shrink-0 rounded-full bg-neon-cyan animate-pulse" />
                 ) : null}
               </motion.div>
             </motion.a>

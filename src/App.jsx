@@ -44,14 +44,17 @@ export default function App() {
         ) : null}
       </AnimatePresence>
 
+      {/* FloatingNav must live OUTSIDE the animated div — Framer Motion's
+          opacity animation sets CSS transforms on its element, which creates
+          a new containing block and breaks position:fixed children. */}
+      {booted ? <FloatingNav /> : null}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: booted ? 1 : 0 }}
         transition={{ duration: 0.8 }}
       >
-        <FloatingNav />
-
-        <main className="relative z-10">
+        <main className="relative z-10 md:pl-20">
           <Hero />
 
           <Suspense fallback={<SectionFallback />}><About /></Suspense>

@@ -43,8 +43,8 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-24 md:px-12">
-        <div className="grid w-full grid-cols-1 items-center gap-12 md:grid-cols-[1.4fr_1fr]">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-20 md:px-10 lg:px-12">
+        <div className="grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -55,7 +55,7 @@ export default function Hero() {
               › access granted // arul.universe
             </motion.div>
 
-            <h1 className="mt-4 font-display text-[18vw] leading-[0.85] md:text-[12rem] font-black tracking-tight">
+            <h1 className="mt-4 font-display text-[22vw] leading-[0.85] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tight">
               {letters.map((l, i) => (
                 <motion.span
                   key={`${l}-${i}`}
@@ -121,9 +121,9 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.8, ease: 'easeOut' }}
-            className="justify-self-center md:justify-self-end"
+            className="justify-self-center lg:justify-self-end"
           >
-            <HoloAvatar size={300} label="A" />
+            <HoloAvatar size={280} label="A" />
           </motion.div>
         </div>
       </div>
