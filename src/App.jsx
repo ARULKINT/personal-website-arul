@@ -34,7 +34,7 @@ export default function App() {
   }, [booted]);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen">
       <ParticleBackground />
       <CustomCursor />
 

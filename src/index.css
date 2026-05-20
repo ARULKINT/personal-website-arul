@@ -17,6 +17,14 @@
   box-sizing: border-box;
 }
 
+/* overflow-x:hidden on body (not a positioned ancestor) prevents horizontal
+   scroll WITHOUT creating a new fixed-position containing block.
+   Putting it on a positioned div (like the React root) is what caused the
+   nav's top:50% to calculate against page height instead of viewport. */
+body {
+  overflow-x: hidden;
+}
+
 html,
 body,
 #root {
