@@ -1,4 +1,4 @@
-import{c as j,r,j as e,m as p}from"./index-B_PxAS4e.js";import{S as E}from"./SectionWrapper-DT123PSZ.js";/**
+import{c as j,r,j as e,m as p}from"./index-X2rYrEHn.js";import{S as E}from"./SectionWrapper-C7qOFBtr.js";/**
  * @license lucide-react v0.460.0 - ISC
  *
  * This source code is licensed under the ISC license.
